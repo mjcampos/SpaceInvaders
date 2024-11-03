@@ -1,0 +1,82 @@
+[gd_scene load_steps=11 format=3 uid="uid://cw6mx5h2gmx6p"]
+
+[ext_resource type="Texture2D" uid="uid://bnnq2fa4kysob" path="res://Assets/sprite-sheet/ufo-sprite-Sheet.png" id="2_q4ky4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o604h"]
+atlas = ExtResource("2_q4ky4")
+region = Rect2(0, 0, 90, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1u2px"]
+atlas = ExtResource("2_q4ky4")
+region = Rect2(90, 0, 90, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mod0l"]
+atlas = ExtResource("2_q4ky4")
+region = Rect2(180, 0, 90, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plhwi"]
+atlas = ExtResource("2_q4ky4")
+region = Rect2(270, 0, 90, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j7qyb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o604h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1u2px")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mod0l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plhwi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p70kv"]
+size = Vector2(88, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uca6e"]
+size = Vector2(18, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ltb7"]
+size = Vector2(14, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0ds8"]
+size = Vector2(6, 4)
+
+[node name="UFO" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_j7qyb")
+autoplay = "default"
+frame_progress = 0.521956
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_p70kv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_uca6e")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(-25, -2)
+shape = SubResource("RectangleShape2D_8ltb7")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(25, -2)
+shape = SubResource("RectangleShape2D_8ltb7")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(25, 2)
+shape = SubResource("RectangleShape2D_v0ds8")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+position = Vector2(-25, 2)
+shape = SubResource("RectangleShape2D_v0ds8")
