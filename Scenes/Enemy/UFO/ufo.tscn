@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://cw6mx5h2gmx6p"]
+[gd_scene load_steps=12 format=3 uid="uid://cw6mx5h2gmx6p"]
 
+[ext_resource type="Script" path="res://Scenes/Enemy/UFO/ufo.gd" id="1_tkkww"]
 [ext_resource type="Texture2D" uid="uid://bnnq2fa4kysob" path="res://Assets/sprite-sheet/ufo-sprite-Sheet.png" id="2_q4ky4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o604h"]
@@ -51,6 +52,7 @@ size = Vector2(14, 4)
 size = Vector2(6, 4)
 
 [node name="UFO" type="CharacterBody2D"]
+script = ExtResource("1_tkkww")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_j7qyb")
