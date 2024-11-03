@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b7acjplkymeeo"]
+[gd_scene load_steps=17 format=3 uid="uid://b7acjplkymeeo"]
 
 [ext_resource type="Texture2D" uid="uid://dqdf4mo1k08eh" path="res://Assets/sprite-sheet/crab-sprite.png" id="1_ma7k5"]
 [ext_resource type="Script" path="res://Scenes/Enemy/Crab/crab.gd" id="1_uiqgv"]
@@ -53,15 +53,9 @@ size = Vector2(4, 8)
 size = Vector2(4, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hdj50"]
-size = Vector2(4, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_klomp"]
-size = Vector2(4, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w1toj"]
 size = Vector2(4, 12)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oms8u"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_klomp"]
 size = Vector2(4, 12)
 
 [node name="Crab" type="CharacterBody2D"]
@@ -70,6 +64,7 @@ script = ExtResource("1_uiqgv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pjqo5")
 autoplay = "default"
+frame = 1
 
 [node name="Torso" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)
@@ -87,19 +82,11 @@ shape = SubResource("RectangleShape2D_tu8hv")
 position = Vector2(-12, 14)
 shape = SubResource("RectangleShape2D_6s03y")
 
-[node name="LeftFoot_0" type="CollisionShape2D" parent="."]
-position = Vector2(-18, 18)
-shape = SubResource("RectangleShape2D_i7g1l")
-
-[node name="LeftFoot_1" type="CollisionShape2D" parent="."]
+[node name="LeftFoot" type="CollisionShape2D" parent="."]
 position = Vector2(-10, 18)
 shape = SubResource("RectangleShape2D_i7g1l")
 
-[node name="RightFoot_0" type="CollisionShape2D" parent="."]
-position = Vector2(18, 18)
-shape = SubResource("RectangleShape2D_gktrr")
-
-[node name="RightFoot_1" type="CollisionShape2D" parent="."]
+[node name="RightFoot" type="CollisionShape2D" parent="."]
 position = Vector2(10, 18)
 shape = SubResource("RectangleShape2D_gktrr")
 
@@ -115,18 +102,10 @@ shape = SubResource("RectangleShape2D_sjr6f")
 position = Vector2(16, -4)
 shape = SubResource("RectangleShape2D_64g1c")
 
-[node name="LeftArm_0" type="CollisionShape2D" parent="."]
-position = Vector2(-20, -8)
+[node name="LeftArm" type="CollisionShape2D" parent="."]
+position = Vector2(-20, 2)
 shape = SubResource("RectangleShape2D_hdj50")
 
-[node name="RightArm_0" type="CollisionShape2D" parent="."]
-position = Vector2(20, -8)
-shape = SubResource("RectangleShape2D_klomp")
-
-[node name="LeftArm_1" type="CollisionShape2D" parent="."]
-position = Vector2(-20, 2)
-shape = SubResource("RectangleShape2D_w1toj")
-
-[node name="RightArm_1" type="CollisionShape2D" parent="."]
+[node name="RightArm" type="CollisionShape2D" parent="."]
 position = Vector2(20, 2)
-shape = SubResource("RectangleShape2D_oms8u")
+shape = SubResource("RectangleShape2D_klomp")

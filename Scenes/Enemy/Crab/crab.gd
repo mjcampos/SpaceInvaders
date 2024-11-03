@@ -2,15 +2,11 @@ extends Enemy
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
-@onready var left_arm_0: CollisionShape2D = $LeftArm_0
-@onready var left_arm_1: CollisionShape2D = $LeftArm_1
-@onready var right_arm_0: CollisionShape2D = $RightArm_0
-@onready var right_arm_1: CollisionShape2D = $RightArm_1
+@onready var left_arm: CollisionShape2D = $LeftArm
+@onready var right_arm: CollisionShape2D = $RightArm
 
-@onready var left_foot_0: CollisionShape2D = $LeftFoot_0
-@onready var left_foot_1: CollisionShape2D = $LeftFoot_1
-@onready var right_foot_0: CollisionShape2D = $RightFoot_0
-@onready var right_foot_1: CollisionShape2D = $RightFoot_1
+@onready var left_foot: CollisionShape2D = $LeftFoot
+@onready var right_foot: CollisionShape2D = $RightFoot
 
 func _process(delta):
 	toggle_collisions()
@@ -18,26 +14,24 @@ func _process(delta):
 func toggle_collisions():
 	match animated_sprite_2d.frame:
 		0:
-			left_arm_0.disabled = false
-			right_arm_0.disabled = false
+			# Arms
+			left_arm.shape.set_size(Vector2(4.0, 16.0))
+			left_arm.position = Vector2(-20.0, -8.0)
 			
-			left_foot_0.disabled = false
-			right_foot_0.disabled = false
+			right_arm.shape.set_size(Vector2(4.0, 16.0))
+			right_arm.position = Vector2(20.0, -8.0)
 			
-			left_arm_1.disabled = true
-			right_arm_1.disabled = true
-			
-			left_foot_1.disabled = true
-			right_foot_1.disabled = true
+			# Feet
+			left_foot.position = Vector2(-18.0, 18.0)
+			right_foot.position = Vector2(18.0, 18.0)
 		1:
-			left_arm_0.disabled = true
-			right_arm_0.disabled = true
+			# Arms
+			left_arm.shape.set_size(Vector2(4.0, 12.0))
+			left_arm.position = Vector2(-20.0, 2.0)
 			
-			left_foot_0.disabled = true
-			right_foot_0.disabled = true
+			right_arm.shape.set_size(Vector2(4.0, 12.0))
+			right_arm.position = Vector2(20.0, 2.0)
 			
-			left_arm_1.disabled = false
-			right_arm_1.disabled = false
-			
-			left_foot_1.disabled = false
-			right_foot_1.disabled = false
+			# Feet
+			left_foot.position = Vector2(-10.0, 18.0)
+			right_foot.position = Vector2(10.0, 18.0)
