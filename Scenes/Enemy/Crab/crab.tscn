@@ -1,0 +1,132 @@
+[gd_scene load_steps=19 format=3 uid="uid://b7acjplkymeeo"]
+
+[ext_resource type="Texture2D" uid="uid://dqdf4mo1k08eh" path="res://Assets/sprite-sheet/crab-sprite.png" id="1_ma7k5"]
+[ext_resource type="Script" path="res://Scenes/Enemy/Crab/crab.gd" id="1_uiqgv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xpmj"]
+atlas = ExtResource("1_ma7k5")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mya6"]
+atlas = ExtResource("1_ma7k5")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pjqo5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xpmj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mya6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jh64y"]
+size = Vector2(28, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52yto"]
+size = Vector2(4, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tu8hv"]
+size = Vector2(4, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6s03y"]
+size = Vector2(4, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i7g1l"]
+size = Vector2(8, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gktrr"]
+size = Vector2(8, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_afdgk"]
+size = Vector2(4, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sjr6f"]
+size = Vector2(4, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_64g1c"]
+size = Vector2(4, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hdj50"]
+size = Vector2(4, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_klomp"]
+size = Vector2(4, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w1toj"]
+size = Vector2(4, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oms8u"]
+size = Vector2(4, 12)
+
+[node name="Crab" type="CharacterBody2D"]
+script = ExtResource("1_uiqgv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pjqo5")
+autoplay = "default"
+
+[node name="Torso" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_jh64y")
+
+[node name="LeftShoulder" type="CollisionShape2D" parent="."]
+position = Vector2(-16, -4)
+shape = SubResource("RectangleShape2D_52yto")
+
+[node name="LeftLeg" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 8)
+shape = SubResource("RectangleShape2D_tu8hv")
+
+[node name="LeftAnkle" type="CollisionShape2D" parent="."]
+position = Vector2(-12, 14)
+shape = SubResource("RectangleShape2D_6s03y")
+
+[node name="LeftFoot_0" type="CollisionShape2D" parent="."]
+position = Vector2(-18, 18)
+shape = SubResource("RectangleShape2D_i7g1l")
+
+[node name="LeftFoot_1" type="CollisionShape2D" parent="."]
+position = Vector2(-10, 18)
+shape = SubResource("RectangleShape2D_i7g1l")
+
+[node name="RightFoot_0" type="CollisionShape2D" parent="."]
+position = Vector2(18, 18)
+shape = SubResource("RectangleShape2D_gktrr")
+
+[node name="RightFoot_1" type="CollisionShape2D" parent="."]
+position = Vector2(10, 18)
+shape = SubResource("RectangleShape2D_gktrr")
+
+[node name="RightAnkle" type="CollisionShape2D" parent="."]
+position = Vector2(12, 14)
+shape = SubResource("RectangleShape2D_afdgk")
+
+[node name="RightLeg" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_sjr6f")
+
+[node name="RightShoulder" type="CollisionShape2D" parent="."]
+position = Vector2(16, -4)
+shape = SubResource("RectangleShape2D_64g1c")
+
+[node name="LeftArm_0" type="CollisionShape2D" parent="."]
+position = Vector2(-20, -8)
+shape = SubResource("RectangleShape2D_hdj50")
+
+[node name="RightArm_0" type="CollisionShape2D" parent="."]
+position = Vector2(20, -8)
+shape = SubResource("RectangleShape2D_klomp")
+
+[node name="LeftArm_1" type="CollisionShape2D" parent="."]
+position = Vector2(-20, 2)
+shape = SubResource("RectangleShape2D_w1toj")
+
+[node name="RightArm_1" type="CollisionShape2D" parent="."]
+position = Vector2(20, 2)
+shape = SubResource("RectangleShape2D_oms8u")
