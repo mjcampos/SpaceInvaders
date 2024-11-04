@@ -8,30 +8,43 @@ extends Enemy
 @onready var left_foot: CollisionShape2D = $LeftFoot
 @onready var right_foot: CollisionShape2D = $RightFoot
 
-func _process(delta):
-	toggle_collisions()
+func _ready():
+	animated_sprite_2d.frame_changed.connect(handle_frame_change)
+	
+	# Set frame starting position
+	animated_sprite_2d.frame = 0
+	frame_starting_position()
 
 func toggle_collisions():
 	match animated_sprite_2d.frame:
 		0:
-			# Arms
-			left_arm.shape.set_size(Vector2(4.0, 16.0))
-			left_arm.position = Vector2(-20.0, -8.0)
-			
-			right_arm.shape.set_size(Vector2(4.0, 16.0))
-			right_arm.position = Vector2(20.0, -8.0)
-			
-			# Feet
-			left_foot.position = Vector2(-18.0, 18.0)
-			right_foot.position = Vector2(18.0, 18.0)
+			frame_starting_position()
 		1:
-			# Arms
-			left_arm.shape.set_size(Vector2(4.0, 12.0))
-			left_arm.position = Vector2(-20.0, 2.0)
-			
-			right_arm.shape.set_size(Vector2(4.0, 12.0))
-			right_arm.position = Vector2(20.0, 2.0)
-			
-			# Feet
-			left_foot.position = Vector2(-10.0, 18.0)
-			right_foot.position = Vector2(10.0, 18.0)
+			frame_end_position()
+
+func handle_frame_change():
+	toggle_collisions()
+
+func frame_starting_position():
+	# Arms
+	left_arm.shape.set_size(Vector2(4.0, 16.0))
+	left_arm.position = Vector2(-20.0, -8.0)
+	
+	right_arm.shape.set_size(Vector2(4.0, 16.0))
+	right_arm.position = Vector2(20.0, -8.0)
+	
+	# Feet
+	left_foot.position = Vector2(-18.0, 18.0)
+	right_foot.position = Vector2(18.0, 18.0)
+	
+func frame_end_position():
+	# Arms
+	left_arm.shape.set_size(Vector2(4.0, 12.0))
+	left_arm.position = Vector2(-20.0, 2.0)
+	
+	right_arm.shape.set_size(Vector2(4.0, 12.0))
+	right_arm.position = Vector2(20.0, 2.0)
+	
+	# Feet
+	left_foot.position = Vector2(-10.0, 18.0)
+	right_foot.position = Vector2(10.0, 18.0)
