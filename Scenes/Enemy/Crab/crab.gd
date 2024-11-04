@@ -8,22 +8,12 @@ extends Enemy
 @onready var left_foot: CollisionShape2D = $LeftFoot
 @onready var right_foot: CollisionShape2D = $RightFoot
 
-func _ready():
-	animated_sprite_2d.frame_changed.connect(handle_frame_change)
-	
-	# Set frame starting position
-	animated_sprite_2d.frame = 0
-	frame_starting_position()
-
-func toggle_collisions():
+func _physics_process(delta):
 	match animated_sprite_2d.frame:
 		0:
 			frame_starting_position()
 		1:
 			frame_end_position()
-
-func handle_frame_change():
-	toggle_collisions()
 
 func frame_starting_position():
 	# Arms
