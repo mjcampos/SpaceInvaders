@@ -1,0 +1,104 @@
+[gd_scene load_steps=16 format=3 uid="uid://d1hauipwiuy10"]
+
+[ext_resource type="Texture2D" uid="uid://bbfgld3kx4s1i" path="res://Assets/sprite-sheet/squid-sprite-Sheet.png" id="1_dol3f"]
+[ext_resource type="Script" path="res://Scenes/Enemy/Squid/squid.gd" id="1_ifm1i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mp4jd"]
+atlas = ExtResource("1_dol3f")
+region = Rect2(0, 0, 26, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_224qg"]
+atlas = ExtResource("1_dol3f")
+region = Rect2(26, 0, 26, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mocq5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mp4jd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_224qg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t804o"]
+size = Vector2(24, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5qn1"]
+size = Vector2(6, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdqbx"]
+size = Vector2(3, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w482j"]
+size = Vector2(3, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r2iap"]
+size = Vector2(3, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6gihw"]
+size = Vector2(3, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j3dob"]
+size = Vector2(3, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lvkr5"]
+size = Vector2(3, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xyqm"]
+size = Vector2(3, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wksyn"]
+size = Vector2(3, 3)
+
+[node name="Squid" type="CharacterBody2D"]
+script = ExtResource("1_ifm1i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mocq5")
+autoplay = "default"
+frame = 1
+
+[node name="Torso" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_t804o")
+
+[node name="ThighGap" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7.5)
+shape = SubResource("RectangleShape2D_d5qn1")
+
+[node name="LeftThigh" type="CollisionShape2D" parent="."]
+position = Vector2(-4.5, 4.5)
+shape = SubResource("RectangleShape2D_fdqbx")
+
+[node name="LeftAnkle" type="CollisionShape2D" parent="."]
+position = Vector2(-7.5, 7.5)
+shape = SubResource("RectangleShape2D_w482j")
+
+[node name="RightAnkle" type="CollisionShape2D" parent="."]
+position = Vector2(7.5, 7.5)
+shape = SubResource("RectangleShape2D_r2iap")
+
+[node name="RightThigh" type="CollisionShape2D" parent="."]
+position = Vector2(4.5, 4.5)
+shape = SubResource("RectangleShape2D_6gihw")
+
+[node name="LeftFoot1" type="CollisionShape2D" parent="."]
+position = Vector2(-10.5, 10.5)
+shape = SubResource("RectangleShape2D_j3dob")
+
+[node name="LeftFoot2" type="CollisionShape2D" parent="."]
+position = Vector2(-4.5, 10.5)
+shape = SubResource("RectangleShape2D_lvkr5")
+
+[node name="RightFoot1" type="CollisionShape2D" parent="."]
+position = Vector2(4.5, 10.5)
+shape = SubResource("RectangleShape2D_0xyqm")
+
+[node name="RightFoot2" type="CollisionShape2D" parent="."]
+position = Vector2(10.5, 10.5)
+shape = SubResource("RectangleShape2D_wksyn")
