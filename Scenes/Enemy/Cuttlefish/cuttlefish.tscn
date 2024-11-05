@@ -1,0 +1,83 @@
+[gd_scene load_steps=13 format=3 uid="uid://b43qb5wkjeo5e"]
+
+[ext_resource type="Texture2D" uid="uid://bwf42w4r7tmxo" path="res://Assets/sprite-sheet/cuttlefish-sprite-Sheet.png" id="1_3h6yo"]
+[ext_resource type="Script" path="res://Scenes/Enemy/Cuttlefish/cuttlefish.gd" id="1_c7yyp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3db8"]
+atlas = ExtResource("1_3h6yo")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tk6q"]
+atlas = ExtResource("1_3h6yo")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6gqll"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3db8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tk6q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54nik"]
+size = Vector2(30, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e75tj"]
+size = Vector2(6, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rbll6"]
+size = Vector2(6, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dkmfx"]
+size = Vector2(6, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s8x1q"]
+size = Vector2(3, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_euyog"]
+size = Vector2(3, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qo5wu"]
+size = Vector2(6, 3)
+
+[node name="Cuttlefish" type="CharacterBody2D"]
+script = ExtResource("1_c7yyp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6gqll")
+autoplay = "default"
+frame = 1
+
+[node name="Torso" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12.5)
+shape = SubResource("RectangleShape2D_54nik")
+
+[node name="LeftThigh" type="CollisionShape2D" parent="."]
+position = Vector2(-8, -0.5)
+shape = SubResource("RectangleShape2D_e75tj")
+
+[node name="LeftFoot" type="CollisionShape2D" parent="."]
+position = Vector2(-12, 5.5)
+shape = SubResource("RectangleShape2D_rbll6")
+
+[node name="RightFoot" type="CollisionShape2D" parent="."]
+position = Vector2(12, 5.5)
+shape = SubResource("RectangleShape2D_dkmfx")
+
+[node name="LeftShin" type="CollisionShape2D" parent="."]
+position = Vector2(-16.5, 2.5)
+shape = SubResource("RectangleShape2D_s8x1q")
+
+[node name="RightShin" type="CollisionShape2D" parent="."]
+position = Vector2(16.5, 2.5)
+shape = SubResource("RectangleShape2D_euyog")
+
+[node name="RightThigh" type="CollisionShape2D" parent="."]
+position = Vector2(10, -0.5)
+shape = SubResource("RectangleShape2D_qo5wu")
