@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://77rqukgfd0ox"]
+
+[ext_resource type="Texture2D" uid="uid://vddco8ygs5l8" path="res://Assets/sprite-sheet/laser-sprite-Sheet.png" id="1_58n7t"]
+[ext_resource type="Script" path="res://Scenes/Player/Laser/laser.gd" id="1_rvqko"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3g75"]
+atlas = ExtResource("1_58n7t")
+region = Rect2(0, 0, 10, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_um2oy"]
+atlas = ExtResource("1_58n7t")
+region = Rect2(10, 0, 10, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sp0u5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3g75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_um2oy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbyvc"]
+size = Vector2(8, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eb0f0"]
+size = Vector2(4, 4)
+
+[node name="Laser" type="Area2D"]
+script = ExtResource("1_rvqko")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_sp0u5")
+autoplay = "default"
+frame = 1
+frame_progress = 0.592729
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_cbyvc")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(0, -27)
+shape = SubResource("RectangleShape2D_eb0f0")

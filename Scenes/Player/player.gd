@@ -4,9 +4,12 @@ extends CharacterBody2D
 
 @export var _speed: float = 400.0
 
+const LASER = preload("res://Scenes/Player/Laser/laser.tscn")
+
 var viewport_width: float
 var sprite_width: float
 var is_shooting: bool = false
+var laser_offset: Vector2 = Vector2(0, -70.0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,7 +35,13 @@ func move():
 	position.x = clamp(position.x, sprite_width/2, viewport_width - sprite_width/2)
 	
 func shoot():
+	var laser_instance = LASER.instantiate()
+	
 	is_shooting = true
+	laser_instance.position = position + laser_offset
+	
+	# Add the laser to the current scene
+	get_tree().current_scene.add_child(laser_instance)
 	animated_sprite_2d.play("shooting")
 
 func handle_shooting_animation_finished():
