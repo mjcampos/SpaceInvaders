@@ -8,7 +8,7 @@ extends Enemy
 @onready var left_foot: CollisionShape2D = $LeftFoot
 @onready var right_foot: CollisionShape2D = $RightFoot
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	match animated_sprite_2d.frame:
 		0:
 			frame_starting_position()

@@ -1,4 +1,4 @@
 class_name Enemy
-extends CharacterBody2D
+extends Area2D
 
 @export var _points: int

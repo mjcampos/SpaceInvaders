@@ -58,13 +58,13 @@ size = Vector2(4, 12)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_klomp"]
 size = Vector2(4, 12)
 
-[node name="Crab" type="CharacterBody2D"]
+[node name="Crab" type="Area2D"]
 script = ExtResource("1_uiqgv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pjqo5")
 autoplay = "default"
-frame = 1
+frame_progress = 0.606642
 
 [node name="Torso" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)

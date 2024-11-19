@@ -51,7 +51,7 @@ size = Vector2(14, 4)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v0ds8"]
 size = Vector2(6, 4)
 
-[node name="UFO" type="CharacterBody2D"]
+[node name="UFO" type="Area2D"]
 script = ExtResource("1_tkkww")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

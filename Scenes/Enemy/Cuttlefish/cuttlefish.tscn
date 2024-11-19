@@ -46,7 +46,7 @@ size = Vector2(3, 3)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qo5wu"]
 size = Vector2(6, 3)
 
-[node name="Cuttlefish" type="CharacterBody2D"]
+[node name="Cuttlefish" type="Area2D"]
 script = ExtResource("1_c7yyp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
