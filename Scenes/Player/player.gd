@@ -18,7 +18,7 @@ func _ready():
 	sprite_width = animated_sprite_2d.sprite_frames.get_frame_texture("default", 0).get_width()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	move()
 	
 	if Input.is_action_just_pressed("shoot"):
