@@ -26,7 +26,7 @@ func frame_starting_position():
 	# Feet
 	left_foot.position = Vector2(-18.0, 18.0)
 	right_foot.position = Vector2(18.0, 18.0)
-	
+
 func frame_end_position():
 	# Arms
 	left_arm.shape.set_size(Vector2(4.0, 12.0))
@@ -38,3 +38,6 @@ func frame_end_position():
 	# Feet
 	left_foot.position = Vector2(-10.0, 18.0)
 	right_foot.position = Vector2(10.0, 18.0)
+
+func _on_area_entered(area: Area2D):
+	handle_laser_detection()

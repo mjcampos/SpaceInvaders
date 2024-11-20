@@ -50,3 +50,7 @@ func frame_end_position():
 	# Feet
 	left_foot.position = Vector2(-18.0, 21.0)
 	right_foot.position = Vector2(18.0, 21.0)
+
+
+func _on_area_entered(area: Area2D):
+	handle_laser_detection()

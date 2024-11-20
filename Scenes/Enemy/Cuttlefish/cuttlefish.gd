@@ -59,3 +59,7 @@ func frame_end_position():
 	# Feet
 	left_foot.disabled = true
 	right_foot.disabled = true
+
+
+func _on_area_entered(area: Area2D):
+	handle_laser_detection()
