@@ -15,3 +15,6 @@ func _process(delta):
 	
 	if position.y < -sprite_height:
 		queue_free()
+
+func _on_area_entered(area):
+	queue_free()
