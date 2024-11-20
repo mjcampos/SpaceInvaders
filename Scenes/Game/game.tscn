@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://d8ior50urb7h"]
+[gd_scene load_steps=4 format=3 uid="uid://d8ior50urb7h"]
 
 [ext_resource type="Texture2D" uid="uid://bk0q0ra8nk3x" path="res://Assets/background.png" id="1_p1lsn"]
+[ext_resource type="Texture2D" uid="uid://0ulp2rs4mtwv" path="res://Assets/sprite/border.png" id="3_ws0yg"]
 [ext_resource type="PackedScene" uid="uid://csn42kvg2scij" path="res://Scenes/Player/player.tscn" id="3_yt46m"]
 
 [node name="Game" type="Node2D"]
@@ -10,4 +11,8 @@ position = Vector2(515, 450)
 texture = ExtResource("1_p1lsn")
 
 [node name="Player" parent="." instance=ExtResource("3_yt46m")]
-position = Vector2(314, 794)
+position = Vector2(477, 739)
+
+[node name="BorderSprite" type="Sprite2D" parent="."]
+position = Vector2(515, 830)
+texture = ExtResource("3_ws0yg")
