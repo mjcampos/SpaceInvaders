@@ -48,6 +48,7 @@ size = Vector2(6, 3)
 
 [node name="Cuttlefish" type="Area2D"]
 script = ExtResource("1_c7yyp")
+_points = 30
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6gqll")

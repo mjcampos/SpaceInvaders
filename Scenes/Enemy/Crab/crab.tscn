@@ -60,6 +60,7 @@ size = Vector2(4, 12)
 
 [node name="Crab" type="Area2D"]
 script = ExtResource("1_uiqgv")
+_points = 20
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pjqo5")
