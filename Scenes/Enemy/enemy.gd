@@ -5,3 +5,4 @@ extends Area2D
 
 func handle_laser_detection():
 	queue_free()
+	ScoreManager.add_to_score(_points)

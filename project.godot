@@ -15,6 +15,11 @@ run/main_scene="res://Scenes/Game/game.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SignalManager="*res://Singletons/SignalManager.gd"
+ScoreManager="*res://Singletons/ScoreManager.gd"
+
 [display]
 
 window/size/viewport_width=1024
