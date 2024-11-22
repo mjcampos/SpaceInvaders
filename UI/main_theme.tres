@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bywst2awlkx52"]
+
+[ext_resource type="FontFile" uid="uid://cncs75jep76dh" path="res://Assets/fonts/PixeloidSansBold-PKnYd.ttf" id="1_o78ni"]
+
+[resource]
+Label/fonts/font = ExtResource("1_o78ni")
