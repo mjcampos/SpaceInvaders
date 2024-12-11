@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d8ior50urb7h"]
+[gd_scene load_steps=8 format=3 uid="uid://d8ior50urb7h"]
 
 [ext_resource type="Texture2D" uid="uid://bk0q0ra8nk3x" path="res://Assets/background.png" id="1_p1lsn"]
 [ext_resource type="Script" path="res://Scenes/Game/game.gd" id="1_xwd0s"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://csn42kvg2scij" path="res://Scenes/Player/player.tscn" id="3_yt46m"]
 [ext_resource type="Theme" uid="uid://bywst2awlkx52" path="res://UI/main_theme.tres" id="4_5p4f2"]
 [ext_resource type="LabelSettings" uid="uid://du3bx3hr48ev1" path="res://UI/label_25.tres" id="5_5unxs"]
+[ext_resource type="PackedScene" uid="uid://cw6mx5h2gmx6p" path="res://Scenes/Enemy/UFO/ufo.tscn" id="11_38236"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_xwd0s")
@@ -22,6 +23,7 @@ position = Vector2(515, 830)
 texture = ExtResource("3_ws0yg")
 
 [node name="UI" type="Control" parent="."]
+z_index = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,4 +70,5 @@ label_settings = ExtResource("5_5unxs")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="EnemyRows" type="Node2D" parent="."]
+[node name="UFO" parent="." instance=ExtResource("11_38236")]
+position = Vector2(-73, 161)
