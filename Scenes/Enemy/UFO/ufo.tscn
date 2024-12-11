@@ -53,6 +53,7 @@ size = Vector2(6, 4)
 
 [node name="UFO" type="Area2D"]
 script = ExtResource("1_tkkww")
+enemy_size = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_j7qyb")
